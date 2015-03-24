@@ -36,12 +36,12 @@ var ColorPicker = React.createClass({
     }
     return (
       <div className="color_picker">
-        <div className="color_box" style={style}></div>
-          <div className="slider_container">
-            <label>R</label>
-            <input type="range" min="0" max="255" ref="red" value={this.state.red} onChange={this.handleColorChange} />
-            <span className="value">{this.state.red}</span>
-          </div>
+        <input className="color_box" type="text" value={this.state.hex} style={style} />
+        <div className="slider_container">
+          <label>R</label>
+          <input type="range" min="0" max="255" ref="red" value={this.state.red} onChange={this.handleColorChange} />
+          <span className="value">{this.state.red}</span>
+        </div>
         <div className="slider_container">
           <label>G</label>
           <input type="range" min="0" max="255" ref="green" value={this.state.green} onChange={this.handleColorChange} />
@@ -52,9 +52,6 @@ var ColorPicker = React.createClass({
           <input type="range" min="0" max="255" ref="blue" value={this.state.blue} onChange={this.handleColorChange} />
           <span className="value">{this.state.blue}</span>
         </div>
-        <label>
-          <input className="hex" type="text" value={this.state.hex} />
-        </label>
       </div>
     );
   }
